@@ -1,0 +1,74 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 style="color:gray;">Employee Details</h1>
+    <!-- Content Row -->
+    <br>
+    <p>On clicking edit icon we will get a new page with values of the selected item from the table and it could be editted and saved (this approach is carried out for all edit options). Check with first entry of in this grid</p>
+    <br>
+    <br>
+    <button type="button" class="btn btn-primary" onclick="window.location.href = 'new-employee.html'">Add New</button>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Sl.No</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                        <th>Department</th>
+                        <th>Designation</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>raju@surveysystem.com</td>
+                        <td>raju@gmail.com</td>
+                        <td>Raju</td>
+                        <td>9895143219</td>
+                        <td>Web Development</td>
+                        <td>Full Stack Developer</td>
+                        <td>
+                            <a href="edit-employee.html">
+                                <fa-icon [icon]="faPencilAlt" style="color:#486dda;"></fa-icon>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#">
+                                <fa-icon [icon]="faTrash" style="color:#486dda;"></fa-icon>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>sanju@surveysystem.com</td>
+                        <td>sanju@gmail.com</td>
+                        <td>Sanjay</td>
+                        <td>9895132419</td>
+                        <td>Business</td>
+                        <td>Business Analyst</td>
+                        <td>
+                            <a href="edit-employee.html">
+                                <fa-icon [icon]="faPencilAlt" style="color:#486dda;"></fa-icon>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#">
+                                <fa-icon [icon]="faTrash" style="color:#486dda;"></fa-icon>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- /.container-fluid -->

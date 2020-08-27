@@ -1,0 +1,65 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 style="color:gray;">Audit Log</h1>
+    <br>
+    <div class="row">
+        <div class="col-xl-3">
+            <label>Employee</label>
+            <select name="employee" id="employee" class="form-control">
+                      <option value="employee1">Employee 1</option>
+                      <option value="employee2">Employee 2</option>
+                      <option value="employee3">Employee 3</option>
+                    </select>
+        </div>
+        <div class="col-xl-3">
+            <label>Page</label>
+            <select name="employee" id="employee" class="form-control">
+                      <option value="home">Home</option>
+                      <option value="createSurvey">Create Survey</option>
+                      <option value="employeeRegistration">Employee Registration</option>
+                    </select>
+        </div>
+        <div class="col-xl-3">
+            <label for="fromDate">From Date</label>
+            <input type="date" name="fromDate" id="fromDate" class="form-control">
+        </div>
+        <div class="col-xl-3">
+            <label for="toDate">From Date</label>
+            <input type="date" name="toDate" id="toDate" class="form-control">
+        </div>
+    </div>
+    <!-- Content Row -->
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Sl.No</th>
+                        <th>Employee Name</th>
+                        <th>Page</th>
+                        <th>Action</th>
+                        <th>Time Stamp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Employee 1</td>
+                        <td>Home</td>
+                        <td>Log In</td>
+                        <td>21-08-2020 11:50</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Employee 1</td>
+                        <td>Home</td>
+                        <td>Log In</td>
+                        <td>22-08-2020 11:50</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- /.container-fluid -->
