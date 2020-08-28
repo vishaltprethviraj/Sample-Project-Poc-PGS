@@ -19,8 +19,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let designation of designations">
-                        <td>{{ designation.id }}</td>
+                    <tr *ngFor="let designation of designations;let i = index">
+                        <td>{{ i+1 }}</td>
                         <td>{{ designation.designationName }}</td>
                         <td>
                             <a href="#">

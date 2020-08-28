@@ -25,33 +25,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>raju@surveysystem.com</td>
-                        <td>raju@gmail.com</td>
-                        <td>Raju</td>
-                        <td>9895143219</td>
-                        <td>Web Development</td>
-                        <td>Full Stack Developer</td>
-                        <td>
-                            <a href="edit-employee.html">
-                                <fa-icon [icon]="faPencilAlt" style="color:#486dda;"></fa-icon>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#">
-                                <fa-icon [icon]="faTrash" style="color:#486dda;"></fa-icon>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>sanju@surveysystem.com</td>
-                        <td>sanju@gmail.com</td>
-                        <td>Sanjay</td>
-                        <td>9895132419</td>
-                        <td>Business</td>
-                        <td>Business Analyst</td>
+                    <tr *ngFor="let employee of employees; let i=index;">
+                        <td> {{ i+1 }} </td>
+                        <td> {{ employee.username }}</td>
+                        <td>{{ employee.email }}</td>
+                        <td>{{ employee.name }}</td>
+                        <td>{{ employee.phoneNumber }}</td>
+                        <td>{{ employee.department }}</td>
+                        <td>{{ employee.designation }}</td>
                         <td>
                             <a href="edit-employee.html">
                                 <fa-icon [icon]="faPencilAlt" style="color:#486dda;"></fa-icon>

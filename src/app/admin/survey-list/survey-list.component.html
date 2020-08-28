@@ -15,27 +15,17 @@
                         <th>Start Date</th>
                         <th>End Date</th>
                         <th>Thank You Message</th>
-                        <th>Status</th>
+                        <!-- <th>Status</th> -->
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td><a href="survey-questions.html" style="color: rgb(94, 41, 238);">Survey 1</a></td>
-                        <td>Description</td>
-                        <td>22-08-2020</td>
-                        <td>25-08-2020</td>
-                        <td>Message</td>
-                        <td>Created</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td><a href="#" style="color: rgb(94, 41, 238);">Survey 2</a></td>
-                        <td>Description</td>
-                        <td>22-08-2020</td>
-                        <td>25-08-2020</td>
-                        <td>Message</td>
-                        <td>Created</td>
+                    <tr *ngFor="let survey of surveys; let i = index">
+                        <td>{{ i+ 1}}</td>
+                        <td><a href="survey-questions.html" style="color: rgb(94, 41, 238);margin-left: 0rem;">{{survey.name}}</a></td>
+                        <td>{{ survey.description }} </td>
+                        <td>{{ survey.startDate }}</td>
+                        <td>{{ survey.endDate }}</td>
+                        <td>{{ survey.thankYouMessage }}</td>
                     </tr>
                 </tbody>
             </table>

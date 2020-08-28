@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
 import { faPencilAlt,faTrash } from '@fortawesome/free-solid-svg-icons';
+
+import { Employee } from './employee.model';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'app-employee-details',
@@ -13,9 +15,12 @@ export class EmployeeDetailsComponent implements OnInit {
   faPencilAlt = faPencilAlt;
   faTrash = faTrash;
   
-  constructor() { }
+  employees: Employee[];
+
+  constructor(private adminService: AdminService) { }
 
   ngOnInit(): void {
+    this.employees = this.adminService.getEmployee();
   }
 
 }

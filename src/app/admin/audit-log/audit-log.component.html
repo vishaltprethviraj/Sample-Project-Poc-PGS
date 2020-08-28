@@ -7,10 +7,9 @@
         <div class="col-xl-3">
             <label>Employee</label>
             <select name="employee" id="employee" class="form-control">
-                      <option value="employee1">Employee 1</option>
-                      <option value="employee2">Employee 2</option>
-                      <option value="employee3">Employee 3</option>
-                    </select>
+                      <option value="{{employee.id}}" *ngFor="let employee of employees">{{ employee.name }}</option>
+                      
+            </select>
         </div>
         <div class="col-xl-3">
             <label>Page</label>
@@ -25,7 +24,7 @@
             <input type="date" name="fromDate" id="fromDate" class="form-control">
         </div>
         <div class="col-xl-3">
-            <label for="toDate">From Date</label>
+            <label for="toDate">To Date</label>
             <input type="date" name="toDate" id="toDate" class="form-control">
         </div>
     </div>
@@ -43,19 +42,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Employee 1</td>
-                        <td>Home</td>
-                        <td>Log In</td>
-                        <td>21-08-2020 11:50</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Employee 1</td>
-                        <td>Home</td>
-                        <td>Log In</td>
-                        <td>22-08-2020 11:50</td>
+                    <tr *ngFor="let auditLog of auditLogs; let i = index ">
+                        <td>{{ i+1 }}</td>
+                        <td>{{ auditLog.employee[0].name }}</td>
+                        <td>{{ auditLog.page }}</td>
+                        <td>{{ auditLog.action }}</td>
+                        <td>{{ auditLog.timeStamp }}</td>
                     </tr>
                 </tbody>
             </table>

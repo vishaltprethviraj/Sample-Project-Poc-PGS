@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Survey } from './survey.model';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'app-survey-list',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SurveyListComponent implements OnInit {
 
-  constructor() { }
+  surveys:Survey[];
+
+  constructor(private adminService:AdminService) { }
+  
 
   ngOnInit(): void {
+    this.surveys = this.adminService.getSurvey();    
+    // console.log(this.surveys);
   }
 
 }

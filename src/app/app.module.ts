@@ -4,6 +4,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './admin/home/home.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { TopbarComponent } from './shared/topbar/topbar.component';
@@ -23,6 +24,7 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [
     AppComponent,
     DropdownDirective,
+    AdminComponent,
     HomeComponent,
     SidebarComponent,
     TopbarComponent,

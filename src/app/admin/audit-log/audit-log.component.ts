@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Employee } from '../employee-details/employee.model';
+import { AdminService } from '../admin.service';
+import { AuditLog } from './audit-log.model';
 
 @Component({
   selector: 'app-audit-log',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuditLogComponent implements OnInit {
 
-  constructor() { }
+  constructor(private adminService:AdminService) { }
+
+  employees: Employee[];
+  auditLogs: AuditLog[];
 
   ngOnInit(): void {
+    this.employees = this.adminService.getEmployee();
+    this.auditLogs = this.adminService.getAuditLog();
+    console.log(this.auditLogs);
   }
 
 }

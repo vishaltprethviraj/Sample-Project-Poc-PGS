@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { faPencilAlt,faTrash} from '@fortawesome/free-solid-svg-icons';
 
 import { Department } from './department.model';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'app-department',
@@ -14,16 +15,12 @@ export class DepartmentComponent implements OnInit {
   faPencilAlt = faPencilAlt;
   faTrash = faTrash;
 
-  departments: Department[] = [
-    new Department(1,'Web Development'),
-    new Department(2,'Analytics'),
-    new Department(3,'Business'),
-    new Department(4,'Accountancy')
-  ];
+  departments: Department[]; 
   
-  constructor() { }
+  constructor(private adminService:AdminService) { }
 
   ngOnInit(): void {
+    this.departments = this.adminService.getDepartment();
   }
 
 }

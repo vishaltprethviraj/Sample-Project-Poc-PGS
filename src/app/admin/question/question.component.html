@@ -21,55 +21,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>What other apps would you like to see us offer?</td>
-                        <td>Survey App, Shopping App, Learning App</td>
+                    <tr *ngFor="let question of questions;let i = index">
+                        <td> {{ i+1 }}</td>
+                        <td>{{ question.question }}</td>
                         <td>
-                            <a href="edit-employee.html">
-                                <fa-icon [icon]="faPencilAlt" style="color:#486dda;"></fa-icon>
-                            </a>
+                            <li *ngFor="let option of question.option">{{option.option}}</li>
                         </td>
-                        <td>
-                            <a href="#">
-                                <fa-icon [icon]="faTrash" style="color:#486dda;"></fa-icon>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>If you could change just one thing about our product, what would it be?</td>
-                        <td>Decrease Price, Improve Quality, Improve Service</td>
-                        <td>
-                            <a href="edit-employee.html">
-                                <fa-icon [icon]="faPencilAlt" style="color:#486dda;"></fa-icon>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#">
-                                <fa-icon [icon]="faTrash" style="color:#486dda;"></fa-icon>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>What are you using this product for?</td>
-                        <td>Personal, Business, Social</td>
-                        <td>
-                            <a href="edit-employee.html">
-                                <fa-icon [icon]="faPencilAlt" style="color:#486dda;"></fa-icon>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#">
-                                <fa-icon [icon]="faTrash" style="color:#486dda;"></fa-icon>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>How strongly do you agree with following statement: company's payment proceess is simple</td>
-                        <td>Strongly Agree, Agree, Disagree, Strongly Disagree, Can't Say</td>
                         <td>
                             <a href="edit-employee.html">
                                 <fa-icon [icon]="faPencilAlt" style="color:#486dda;"></fa-icon>

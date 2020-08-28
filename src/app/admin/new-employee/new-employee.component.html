@@ -36,22 +36,13 @@
             <div class="col-xl-4">
                 <label for="department">Department</label>
                 <select name="department" id="department" class="form-control">
-                        <option value="webDevelopment">Web Development</option>
-                        <option value="analytics">Analytics</option>
-                        <option value="business">Business</option>
-                        <option value="accountancy">Accountancy</option>
+                        <option value="{{department.id}}" *ngFor="let department of departments">{{department.departmentName}}</option>                       
                     </select>
             </div>
             <div class="col-xl-4">
                 <label for="designation">Designation</label>
                 <select name="designation" id="designation" class="form-control">
-                    <option value="regionalDirector">Regional Director</option>
-                    <option value="systemArchitect">System Architect</option>
-                    <option value="fullStackDeveloper">Full Stack Developer</option>
-                    <option value="juniorSE">Junior Software Engineer</option>
-                    <option value="softwareET">Software Engineer Trainee</option>
-                    <option value="accountant">Accountant</option>
-                    <option value="businessAnalyst">Business Analyst</option>
+                    <option value="{{designation.id}}" *ngFor="let designation of designations">{{ designation.designationName }}</option>                    
                 </select>
             </div>
             <div class="row">

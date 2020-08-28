@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { faPencilAlt,faTrash } from '@fortawesome/free-solid-svg-icons';
 
 import { Designation } from './designation.model';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'app-designation',
@@ -14,19 +15,12 @@ export class DesignationComponent implements OnInit {
   faPencilAlt = faPencilAlt;
   faTrash = faTrash;
 
-  designations: Designation[] = [
-    new Designation(1, 'Regional Director'),
-    new Designation(2, 'System Architect'),
-    new Designation(3, 'Full Stack Developer'),
-    new Designation(4, 'Junior Software Engineer'),
-    new Designation(5, 'Software Engineer Trainee'),
-    new Designation(6, 'Accountant'),
-    new Designation(7, 'Business Analyst')
-  ];
+  designations: Designation[];
 
-  constructor() { }
+  constructor(private adminService: AdminService) { }
 
   ngOnInit(): void {
+    this.designations = this.adminService.getDesignation();
   }
 
 }
