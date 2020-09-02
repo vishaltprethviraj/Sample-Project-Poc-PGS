@@ -11,18 +11,27 @@ import { SurveyListComponent } from './survey-list/survey-list.component';
 import { NewSurveyComponent } from './new-survey/new-survey.component';
 import { NewEmployeeComponent } from './new-employee/new-employee.component';
 import { ReportComponent } from './report/report.component';
+import { AdminComponent } from './admin.component';
 
 const routes: Routes = [
-    { path: 'home', component: HomeComponent },
-    { path: 'audit-log', component: AuditLogComponent },
-    { path: 'employee-details', component: EmployeeDetailsComponent },
-    { path: 'department', component: DepartmentComponent },
-    { path: 'designation', component: DesignationComponent },
-    { path: 'question', component: QuestionComponent },
-    { path: 'survey-list', component: SurveyListComponent },
-    { path: 'new-survey', component: NewSurveyComponent },
-    { path: 'new-employee', component: NewEmployeeComponent},
-    { path: 'report', component: ReportComponent }
+    { path: 'admin' , component : AdminComponent, 
+    
+    children: [        
+         { path: '', component: HomeComponent },
+         { path: 'home', component: HomeComponent},
+         { path: 'audit-log', component: AuditLogComponent },
+         { path: 'employee-details', component: EmployeeDetailsComponent },
+         { path: 'department', component: DepartmentComponent },
+         { path: 'designation', component: DesignationComponent },
+         { path: 'question', component: QuestionComponent },
+         { path: 'survey-list', component: SurveyListComponent },
+         { path: 'new-survey', component: NewSurveyComponent },
+         { path: 'new-employee', component: NewEmployeeComponent},
+         { path: 'report', component: ReportComponent }
+    ]
+},
+    
+    
 ];
 
 @NgModule({
