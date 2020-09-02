@@ -31,8 +31,8 @@
                         <td>{{ employee.email }}</td>
                         <td>{{ employee.name }}</td>
                         <td>{{ employee.phoneNumber }}</td>
-                        <td>{{ employee.department }}</td>
-                        <td>{{ employee.designation }}</td>
+                        <td>{{ employee.department[0].departmentName }}</td>
+                        <td>{{ employee.designation[0].designationName }}</td>
                         <td>
                             <a href="edit-employee.html">
                                 <fa-icon [icon]="faPencilAlt" style="color:#486dda;"></fa-icon>

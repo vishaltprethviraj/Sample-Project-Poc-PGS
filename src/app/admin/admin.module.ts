@@ -16,6 +16,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -37,6 +38,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     RouterModule,    
     AdminRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     SharedModule
   ],
   exports: [

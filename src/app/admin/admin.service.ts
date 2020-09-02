@@ -40,8 +40,8 @@ export class AdminService {
     //employee section
 
     employees: Employee[] =[
-        new Employee(1,'raju@1234','raju@gmail.com','Rajesh','9895476309','Web Development','Full Stack Developer'),
-        new Employee(2,'sanju_2310','sanju@gmail.com','Sanjay','8089367521','Business','Business Analyst')
+        new Employee(1,'raju@1234','raju@gmail.com','Rajesh','9895476309',[this.departments[0]],[this.designations[2]]),
+        new Employee(2,'sanju_2310','sanju@gmail.com','Sanjay','8089367521',[this.departments[2]],[this.designations[6]])
       ];
 
     getEmployee() {

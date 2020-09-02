@@ -5,15 +5,15 @@
     <hr>
     <h3>Personal Details</h3>
     <hr>
-    <form>
+    <form (ngSubmit)="onSubmit()" #f="ngForm">
         <div class="row">
             <div class="col-xl-4">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" id="username">
+                <input type="text" class="form-control" id="username" ngModel name="username">
             </div>
             <div class="col-xl-4">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name">
+                <input type="text" class="form-control" id="name" ngModel name="name">
             </div>
         </div>
         <hr>
@@ -22,11 +22,11 @@
         <div class="row">
             <div class="col-xl-4">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email">
+                <input type="email" class="form-control" id="email" ngModel name="email">
             </div>
             <div class="col-xl-4">
                 <label for="phone">Phone Number</label>
-                <input type="tel" class="form-control" id="phone">
+                <input type="tel" class="form-control" id="phone" ngModel name="phoneNumber">
             </div>
         </div>
         <hr>
@@ -35,13 +35,13 @@
         <div class="row">
             <div class="col-xl-4">
                 <label for="department">Department</label>
-                <select name="department" id="department" class="form-control">
+                <select name="department" id="department" class="form-control" [ngModel]="defaultDepartment" name="departments">
                         <option value="{{department.id}}" *ngFor="let department of departments">{{department.departmentName}}</option>                       
                     </select>
             </div>
             <div class="col-xl-4">
                 <label for="designation">Designation</label>
-                <select name="designation" id="designation" class="form-control">
+                <select name="designation" id="designation" class="form-control" [ngModel]="defaultDesignation" name="designations">
                     <option value="{{designation.id}}" *ngFor="let designation of designations">{{ designation.designationName }}</option>                    
                 </select>
             </div>

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Department } from '../department/department.model';
 import { AdminService } from '../admin.service';
 import { Designation } from '../designation/designation.model';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-new-employee',
@@ -13,11 +14,21 @@ export class NewEmployeeComponent implements OnInit {
   constructor(private adminService:AdminService) { }
   
   departments : Department[];
-  designations : Designation[];
+  designations : Designation[]; 
 
-  ngOnInit(): void {
+  @ViewChild('f') newEmployeeForm: NgForm;
+   
+  defaultDepartment: number; 
+  defaultDesignation: number; 
+
+  ngOnInit(): void {  
     this.departments = this.adminService.getDepartment();
-    this.designations = this.adminService.getDesignation();
+    this.designations = this.adminService.getDesignation();   
+    this.defaultDepartment =  this.departments[0].id;
+    this.defaultDesignation = this.designations[0].id;
+  }  
+  
+  onSubmit() {
+    console.log(this.newEmployeeForm);
   }
-
 }
