@@ -1,9 +1,7 @@
-export class Department {
-    public id: number;
+export class Department {    
     public departmentName: string;
 
-    constructor(id:number,departmentName:string) {
-        this.id = id;
+    constructor(departmentName:string) {        
         this.departmentName = departmentName;
     }
 }

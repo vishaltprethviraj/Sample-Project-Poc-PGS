@@ -17,6 +17,10 @@ import { TopbarComponent } from './topbar/topbar.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AddDepartmentComponent } from './department/add-department/add-department.component';
+import { EditDepartmentComponent } from './department/edit-department/edit-department.component';
+import { AddDesignationComponent } from './designation/add-designation/add-designation.component';
+import { EditDesignationComponent } from './designation/edit-designation/edit-designation.component';
 
 
 @NgModule({
@@ -33,7 +37,11 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     ReportComponent,
     NewSurveyComponent,
     SidebarComponent,
-    TopbarComponent    
+    TopbarComponent,
+    AddDepartmentComponent,
+    EditDepartmentComponent,
+    AddDesignationComponent,
+    EditDesignationComponent    
   ],
   imports: [
     RouterModule,    
@@ -55,7 +63,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     ReportComponent,
     NewSurveyComponent,
     SidebarComponent,
-    TopbarComponent
+    TopbarComponent,
+    AddDepartmentComponent,
+    EditDepartmentComponent   
   ]
 })
 export class AdminModule {

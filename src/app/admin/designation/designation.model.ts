@@ -1,9 +1,7 @@
-export class Designation {
-    public id: number;
+export class Designation {    
     public designationName: string;
 
-    constructor(id:number,designationName:string){
-        this.id = id;
-        this.designationName =designationName;
+    constructor(designationName:string){        
+        this.designationName = designationName;
     }
 }

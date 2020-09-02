@@ -36,13 +36,13 @@
             <div class="col-xl-4">
                 <label for="department">Department</label>
                 <select name="department" id="department" class="form-control" [ngModel]="defaultDepartment" name="departments">
-                        <option value="{{department.id}}" *ngFor="let department of departments">{{department.departmentName}}</option>                       
-                    </select>
+                        <option value="{{i}}" *ngFor="let department of departments; let i = index">{{department.departmentName}}</option>                       
+                </select>
             </div>
             <div class="col-xl-4">
                 <label for="designation">Designation</label>
                 <select name="designation" id="designation" class="form-control" [ngModel]="defaultDesignation" name="designations">
-                    <option value="{{designation.id}}" *ngFor="let designation of designations">{{ designation.designationName }}</option>                    
+                    <option value="{{i}}" *ngFor="let designation of designations; let i =index">{{ designation.designationName }}</option>                    
                 </select>
             </div>
             <div class="row">

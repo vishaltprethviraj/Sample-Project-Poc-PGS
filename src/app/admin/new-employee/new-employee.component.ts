@@ -23,9 +23,7 @@ export class NewEmployeeComponent implements OnInit {
 
   ngOnInit(): void {  
     this.departments = this.adminService.getDepartment();
-    this.designations = this.adminService.getDesignation();   
-    this.defaultDepartment =  this.departments[0].id;
-    this.defaultDesignation = this.designations[0].id;
+    this.designations = this.adminService.getDesignation();           
   }  
   
   onSubmit() {

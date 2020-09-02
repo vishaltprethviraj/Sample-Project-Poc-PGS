@@ -5,38 +5,77 @@ import { Question } from './question/question.model';
 import { Option } from './question/option.model';
 import { Survey } from './survey-list/survey.model';
 import { AuditLog } from './audit-log/audit-log.model';
+import { Subject } from 'rxjs';
 
 export class AdminService {
     
     //department section
-    
+    departmentChanged = new Subject<Department[]>();
+
     departments: Department[] = [
-        new Department(1,'Web Development'),
-        new Department(2,'Analytics'),
-        new Department(3,'Business'),
-        new Department(4,'Accountancy')
+        new Department('Web Development'),
+        new Department('Analytics'),
+        new Department('Business'),
+        new Department('Accountancy')
       ];
 
     getDepartment(){
         return this.departments.slice();    
     }
 
+    getDepartments(index:number) {
+      return this.departments[index];
+    }
+
+    addDepartment(department:Department) {
+      this.departments.push(department);
+      this.departmentChanged.next(this.departments.slice());
+    }
+
+    updateDepartment(index:number, newDepartment:Department) {
+      this.departments[index] = newDepartment;
+      this.departmentChanged.next(this.departments.slice());
+    }
+
+    deleteDepartment(index:number) {
+      this.departments.splice(index,1);
+      this.departmentChanged.next(this.departments.slice());
+    }
     //designation section
 
+    designationChanged = new Subject<Designation[]>();
     designations: Designation[] = [
-        new Designation(1, 'Regional Director'),
-        new Designation(2, 'System Architect'),
-        new Designation(3, 'Full Stack Developer'),
-        new Designation(4, 'Junior Software Engineer'),
-        new Designation(5, 'Software Engineer Trainee'),
-        new Designation(6, 'Accountant'),
-        new Designation(7, 'Business Analyst')
+        new Designation('Regional Director'),
+        new Designation('System Architect'),
+        new Designation('Full Stack Developer'),
+        new Designation('Junior Software Engineer'),
+        new Designation('Software Engineer Trainee'),
+        new Designation('Accountant'),
+        new Designation('Business Analyst')
       ];
     
     getDesignation() {
-        return this.designations.slice();
+      return this.designations.slice();
     }
 
+    getDesignations(index:number) {
+      return this.designations[index];
+    }
+
+    addDesignation(newDesignation:Designation) {
+      this.designations.push(newDesignation);
+      this.designationChanged.next(this.designations.slice());
+    }
+
+    updateDesignation(index:number,newDesignation:Designation) {
+      this.designations[index] = newDesignation;
+      this.designationChanged.next(this.designations.slice());
+    }
+
+    deleteDesignation(index:number) {
+      this.designations.splice(index,1);
+      this.designationChanged.next(this.designations.slice());
+    }
     //employee section
 
     employees: Employee[] =[
