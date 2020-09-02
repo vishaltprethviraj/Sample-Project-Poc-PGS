@@ -16,7 +16,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { SharedModule } from '../shared/shared.module';
-import { AdminStartComponent } from './admin-start/admin-start.component';
+
 
 @NgModule({
   declarations: [
@@ -32,8 +32,7 @@ import { AdminStartComponent } from './admin-start/admin-start.component';
     ReportComponent,
     NewSurveyComponent,
     SidebarComponent,
-    TopbarComponent,
-    AdminStartComponent,
+    TopbarComponent    
   ],
   imports: [
     RouterModule,    
