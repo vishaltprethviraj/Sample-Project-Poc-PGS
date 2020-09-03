@@ -76,15 +76,27 @@ export class AdminService {
       this.designations.splice(index,1);
       this.designationChanged.next(this.designations.slice());
     }
+    
     //employee section
 
+    employeeChanged = new Subject<Employee[]>();
+
     employees: Employee[] =[
-        new Employee(1,'raju@1234','raju@gmail.com','Rajesh','9895476309',[this.departments[0]],[this.designations[2]]),
-        new Employee(2,'sanju_2310','sanju@gmail.com','Sanjay','8089367521',[this.departments[2]],[this.designations[6]])
+        new Employee('raju@1234','raju@gmail.com','Rajesh','9895476309',[this.departments[0]],[this.designations[2]]),
+        new Employee('sanju_2310','sanju@gmail.com','Sanjay','8089367521',[this.departments[2]],[this.designations[6]])
       ];
 
     getEmployee() {
         return this.employees.slice();
+    }
+
+    getEmployees(index:number) {
+      return this.employees[index];
+    }
+
+    addEmployee(employee:Employee) {
+      this.employees.push(employee);      
+      this.employeeChanged.next(this.employees.slice());
     }
 
 

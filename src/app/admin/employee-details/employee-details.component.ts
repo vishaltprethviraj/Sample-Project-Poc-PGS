@@ -3,6 +3,7 @@ import { faPencilAlt,faTrash } from '@fortawesome/free-solid-svg-icons';
 
 import { Employee } from './employee.model';
 import { AdminService } from '../admin.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-employee-details',
@@ -17,10 +18,13 @@ export class EmployeeDetailsComponent implements OnInit {
   
   employees: Employee[];
 
-  constructor(private adminService: AdminService) { }
+  constructor(private adminService: AdminService,private router:Router,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.employees = this.adminService.getEmployee();
   }
 
+  onAddEmployee() {
+    this.router.navigate(['/admin/new-employee']);
+  }
 }

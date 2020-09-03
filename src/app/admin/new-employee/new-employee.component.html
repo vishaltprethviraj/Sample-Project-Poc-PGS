@@ -9,11 +9,13 @@
         <div class="row">
             <div class="col-xl-4">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" ngModel name="username">
+                <input type="text" class="form-control" id="username" ngModel name="username" required #username="ngModel">
+                <span class="help-block" *ngIf="!username.valid && username.touched"> *Please enter your username</span>
             </div>
             <div class="col-xl-4">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" ngModel name="name">
+                <input type="text" class="form-control" id="name" ngModel name="name" required #name="ngModel">
+                <span class="help-block" *ngIf="!name.valid && name.touched"> *Please enter your name</span>
             </div>
         </div>
         <hr>
@@ -22,11 +24,13 @@
         <div class="row">
             <div class="col-xl-4">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" ngModel name="email">
+                <input type="email" class="form-control" id="email" ngModel name="email" required email #email="ngModel">
+                <span class="help-block" *ngIf="!email.valid && email.touched"> *Please enter a valid email</span>
             </div>
             <div class="col-xl-4">
-                <label for="phone">Phone Number</label>
-                <input type="tel" class="form-control" id="phone" ngModel name="phoneNumber">
+                <label for="phone">Mobile Number</label>
+                <input type="tel" class="form-control" id="phone" ngModel name="phoneNumber" required pattern="^[0-9]{10}$" #phone="ngModel">
+                <span class="help-block" *ngIf="!phone.valid && phone.touched"> *Please enter a valid phone number</span>
             </div>
         </div>
         <hr>
@@ -35,13 +39,13 @@
         <div class="row">
             <div class="col-xl-4">
                 <label for="department">Department</label>
-                <select name="department" id="department" class="form-control" [ngModel]="defaultDepartment" name="departments">
+                <select name="department" id="department" class="form-control" [ngModel]="defaultDepartment">
                         <option value="{{i}}" *ngFor="let department of departments; let i = index">{{department.departmentName}}</option>                       
                 </select>
             </div>
             <div class="col-xl-4">
                 <label for="designation">Designation</label>
-                <select name="designation" id="designation" class="form-control" [ngModel]="defaultDesignation" name="designations">
+                <select name="designation" id="designation" class="form-control" [ngModel]="defaultDesignation">
                     <option value="{{i}}" *ngFor="let designation of designations; let i =index">{{ designation.designationName }}</option>                    
                 </select>
             </div>
@@ -52,8 +56,8 @@
         <br>
         <div class="row">
             &nbsp;&nbsp;
-            <button type="submit" class="btn btn-primary">Register</button> &nbsp;&nbsp;
-            <button type="button" class="btn btn-danger">Cancel</button> &nbsp;&nbsp;
+            <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Register</button> &nbsp;&nbsp;
+            <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button> &nbsp;&nbsp;
         </div>
     </form>
 

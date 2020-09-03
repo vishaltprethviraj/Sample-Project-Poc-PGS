@@ -37,19 +37,9 @@ const routes: Routes = [
          ] },
          { path: 'question',  children: [
             
-                {
-                  path: '',
-                  component: QuestionComponent,
-                  pathMatch: 'full',                  
-                },
-                {
-                  path: 'add',
-                  component: AddQuestionComponent
-                },
-                {
-                    path: ':id/edit',
-                    component: EditQuestionComponent
-                }
+                { path: '', component: QuestionComponent, pathMatch: 'full' },
+                { path: 'add', component: AddQuestionComponent },
+                { path: ':id/edit', component: EditQuestionComponent }
               
          ] },
          { path: 'survey-list', component: SurveyListComponent },

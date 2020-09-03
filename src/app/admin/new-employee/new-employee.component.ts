@@ -3,6 +3,8 @@ import { Department } from '../department/department.model';
 import { AdminService } from '../admin.service';
 import { Designation } from '../designation/designation.model';
 import { NgForm } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Employee } from '../employee-details/employee.model';
 
 @Component({
   selector: 'app-new-employee',
@@ -11,22 +13,39 @@ import { NgForm } from '@angular/forms';
 })
 export class NewEmployeeComponent implements OnInit {
 
-  constructor(private adminService:AdminService) { }
+  constructor(private adminService:AdminService,private router:Router,private route:ActivatedRoute) { }
   
   departments : Department[];
   designations : Designation[]; 
-
-  @ViewChild('f') newEmployeeForm: NgForm;
+  departmentId: number;
+  designationId: number;
+  @ViewChild('f',{static:false}) newEmployeeForm: NgForm;
    
-  defaultDepartment: number; 
-  defaultDesignation: number; 
+  defaultDepartment = '0' 
+  defaultDesignation = '0'; 
 
   ngOnInit(): void {  
     this.departments = this.adminService.getDepartment();
     this.designations = this.adminService.getDesignation();           
   }  
   
-  onSubmit() {
+  onSubmit() {    
+    this.departmentId = this.newEmployeeForm.value['department'];
+    this.designationId = this.newEmployeeForm.value['designation'];    
+    const newEmployee = new Employee(this.newEmployeeForm.value['username'],
+                                    this.newEmployeeForm.value['name'],
+                                    this.newEmployeeForm.value['email'],
+                                    this.newEmployeeForm.value['phoneNumber'],                                                                      
+                                    [this.adminService.getDepartments(this.departmentId)],
+                                    [this.adminService.getDesignations(this.designationId)])
+    this.adminService.addEmployee(newEmployee);
     console.log(this.newEmployeeForm);
+    console.log(newEmployee);
+    this.onCancel();
+  }
+
+  onCancel() {
+    this.router.navigate(['/admin/employee-details']);
+    window.scroll(0,0);
   }
 }
