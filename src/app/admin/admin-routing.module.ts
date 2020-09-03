@@ -16,6 +16,8 @@ import { AddDepartmentComponent } from './department/add-department/add-departme
 import { EditDepartmentComponent } from './department/edit-department/edit-department.component';
 import { AddDesignationComponent } from './designation/add-designation/add-designation.component';
 import { EditDesignationComponent } from './designation/edit-designation/edit-designation.component';
+import { AddQuestionComponent } from './question/add-question/add-question.component';
+import { EditQuestionComponent } from './question/edit-question/edit-question.component';
 
 const routes: Routes = [
     { path: 'admin' , component : AdminComponent, 
@@ -33,7 +35,23 @@ const routes: Routes = [
              { path: 'add', component: AddDesignationComponent},
              { path: ':id/edit',component:EditDesignationComponent }
          ] },
-         { path: 'question', component: QuestionComponent },
+         { path: 'question',  children: [
+            
+                {
+                  path: '',
+                  component: QuestionComponent,
+                  pathMatch: 'full',                  
+                },
+                {
+                  path: 'add',
+                  component: AddQuestionComponent
+                },
+                {
+                    path: ':id/edit',
+                    component: EditQuestionComponent
+                }
+              
+         ] },
          { path: 'survey-list', component: SurveyListComponent },
          { path: 'new-survey', component: NewSurveyComponent },
          { path: 'new-employee', component: NewEmployeeComponent},

@@ -21,6 +21,8 @@ import { AddDepartmentComponent } from './department/add-department/add-departme
 import { EditDepartmentComponent } from './department/edit-department/edit-department.component';
 import { AddDesignationComponent } from './designation/add-designation/add-designation.component';
 import { EditDesignationComponent } from './designation/edit-designation/edit-designation.component';
+import { AddQuestionComponent } from './question/add-question/add-question.component';
+import { EditQuestionComponent } from './question/edit-question/edit-question.component';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { EditDesignationComponent } from './designation/edit-designation/edit-de
     AddDepartmentComponent,
     EditDepartmentComponent,
     AddDesignationComponent,
-    EditDesignationComponent    
+    EditDesignationComponent,
+    AddQuestionComponent,
+    EditQuestionComponent    
   ],
   imports: [
     RouterModule,    

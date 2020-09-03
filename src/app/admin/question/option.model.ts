@@ -1,9 +1,7 @@
-export class Option {
-    public optionId: number;
-    public option: string;
+export class Option {    
+    public options: string;
 
-    constructor(optionId:number,option:string) {
-        this.optionId = optionId;
-        this.option = option;
+    constructor(options:string) {        
+        this.options = options;
     }
 }

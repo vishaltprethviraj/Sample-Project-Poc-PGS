@@ -98,34 +98,56 @@ export class AdminService {
     getAuditLog() {
       return this.auditLogs.slice();
     }
+    
     //question section
 
+    questionChanged = new Subject<Question[]>();
+
     questions:Question[] = [
-      new Question(1,"What other apps would you like to see us offer?",[
-        new Option(1,'Survey App'),
-        new Option(2,'Shopping App'),
-        new Option(3,'Learning App')
+      new Question("What other apps would you like to see us offer?",[
+        new Option('Survey App'),
+        new Option('Shopping App'),
+        new Option('Learning App')
       ]),
-      new Question(2,"If you could change just one thing about our product, what would it be?",[
-        new Option(4,'Reduce the Price'),
-        new Option(5,'Improve the Quality'),
-        new Option(6,'Fast and Effecient Maintainance')
+      new Question("If you could change just one thing about our product, what would it be?",[
+        new Option('Reduce the Price'),
+        new Option('Improve the Quality'),
+        new Option('Fast and Effecient Maintainance')
       ]),
-      new Question(3,"What are you using this product for?",[
-        new Option(7,'Personal'),
-        new Option(8,'Business'),
-        new Option(9,'Social')
+      new Question("What are you using this product for?",[
+        new Option('Personal'),
+        new Option('Business'),
+        new Option('Social')
       ]),
-      new Question(4,"How strongly do you agree with following statement: company's payment proceess is simple",[        
-        new Option(11,'Agree'),
-        new Option(12,'Disagree'),        
-        new Option(14,'Can\'t say'),
+      new Question("How strongly do you agree with following statement: company's payment proceess is simple",[        
+        new Option('Agree'),
+        new Option('Disagree'),        
+        new Option('Can\'t say'),
       ]),
 
     ];
 
     getQuestion() {
       return this.questions.slice();
+    }
+
+    getQuestions(index:number) {
+      return this.questions[index];
+    }
+
+    addQuestion(question:Question) {
+      this.questions.push(question);
+      this.questionChanged.next(this.questions.slice());
+    }
+
+    updateQuestion(index:number,newQuestion:Question) {
+      this.questions[index] = newQuestion;      
+      this.questionChanged.next(this.questions.slice());
+    }
+
+    deleteQuestion(index:number) {
+      this.questions.splice(index,1),
+      this.questionChanged.next(this.questions.slice());
     }
 
     //survey section

@@ -1,12 +1,10 @@
 import { Option } from './option.model';
 
-export class Question {
-    public questionId : number;
+export class Question {    
     public question : string; 
     public option: Option[];   
 
-    constructor(questionId:number,question:string,option:Option[]) {
-        this.questionId = questionId;
+    constructor(question:string,option:Option[]) {        
         this.question = question;
         this.option = option;
     }

@@ -4,7 +4,7 @@
     <!-- Page Heading -->
     <h1 style="color:gray;">Questions</h1>
     <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <button type="submit" class="btn btn-primary" onclick="window.location.href='add-questions.html'">Add New</button>
+    <button type="submit" class="btn btn-primary" (click)="onAddQuestion()">Add New</button>
 
     <!-- Content Row -->
 
@@ -25,21 +25,24 @@
                         <td> {{ i+1 }}</td>
                         <td>{{ question.question }}</td>
                         <td>
-                            <li *ngFor="let option of question.option">{{option.option}}</li>
+                            <ol>
+                                <li *ngFor="let option of question.option">{{option.options}}</li>
+                            </ol>
                         </td>
                         <td>
-                            <a href="edit-employee.html">
+                            <a style="cursor: pointer;" [routerLink]="[i,'edit']">
                                 <fa-icon [icon]="faPencilAlt" style="color:#486dda;"></fa-icon>
                             </a>
                         </td>
                         <td>
-                            <a href="#">
+                            <a style="cursor: pointer;" (click)="onDeleteQuestion()">
                                 <fa-icon [icon]="faTrash" style="color:#486dda;"></fa-icon>
                             </a>
                         </td>
                     </tr>
                 </tbody>
             </table>
+            <router-outlet></router-outlet>
         </div>
     </div>
 </div>
