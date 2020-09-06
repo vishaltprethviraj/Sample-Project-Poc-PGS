@@ -14,7 +14,7 @@ export class DepartmentComponent implements OnInit {
 
   //required Icons
   faPencilAlt = faPencilAlt;
-  faTrash = faTrash;
+  faTrash = faTrash;  
   
   departments: Department[]; 
   
@@ -36,7 +36,7 @@ export class DepartmentComponent implements OnInit {
     this.router.navigate(['add'],{relativeTo: this.route})
   }
 
-  onDeleteDepartment(i) {
+  onDeleteDepartment(i) {   
     this.adminService.deleteDepartment(i);
     console.log(i);
   }

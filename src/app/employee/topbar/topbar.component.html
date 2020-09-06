@@ -2,23 +2,11 @@
 
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
-        <!-- Nav Item - Alerts -->
-        <li routerLinkActive="active">
-            <a style="cursor: pointer;" class="nav-link" style="margin-top:0.7rem;" routerLink="new-survey">
-                <fa-icon [icon]="faClipboardList"></fa-icon>&nbsp;&nbsp;New Survey</a>
-        </li>
-
-        <!-- Nav Item - Messages -->
 
         <li routerLinkActive="active">
-            <a style="cursor: pointer;" class="nav-link" style="margin-top:0.7rem;" routerLink="new-employee">
-                <fa-icon [icon]="faUser"></fa-icon>&nbsp;&nbsp;New Employee
+            <a style="cursor: pointer;" class="nav-link" style="margin-top:0.7rem;" routerLink="list-survey">
+                <fa-icon [icon]="faClipboardList"></fa-icon>&nbsp;&nbsp;Surveys
             </a>
-        </li>
-
-        <li routerLinkActive="active">
-            <a style="cursor: pointer;" class="nav-link" style="margin-top:0.7rem;" routerLink="report">
-                <fa-icon [icon]="faBook"></fa-icon>&nbsp;&nbsp;Reports</a>
         </li>
 
         <div class="topbar-divider d-none d-sm-block"></div>
@@ -26,7 +14,7 @@
         <!-- Nav Item - User Information -->
 
         <li class="nav-item dropdown no-arrow" style="cursor: pointer;">
-            <a class="nav-item nav-link dropdown-toggle mr-md-2" (click)="onDropdownMenuClick()" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <a class="nav-item nav-link dropdown-toggle mr-md-2" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Username</span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
             </a>

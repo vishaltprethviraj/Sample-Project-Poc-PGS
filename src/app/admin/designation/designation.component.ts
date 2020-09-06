@@ -39,7 +39,9 @@ export class DesignationComponent implements OnInit {
   }
 
   onDeleteDesignation(i) {
-    this.adminService.deleteDesignation(i);  
+    this.adminService.deleteDesignation(i); 
+    console.log(i);
+     
   }
 
   scrollDown(){
