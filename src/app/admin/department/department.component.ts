@@ -15,7 +15,7 @@ export class DepartmentComponent implements OnInit {
   //required Icons
   faPencilAlt = faPencilAlt;
   faTrash = faTrash;
-
+  
   departments: Department[]; 
   
   constructor(private adminService:AdminService,private router:Router,private route:ActivatedRoute) { }
@@ -29,14 +29,6 @@ export class DepartmentComponent implements OnInit {
           this.departments = departments;
         }
       );
-
-      this.route.params
-      .subscribe(
-        (params: Params) => {
-          this.id = +params['id'];          
-        }
-      );    
-
     this.departments = this.adminService.getDepartment();
   }
 
@@ -44,8 +36,9 @@ export class DepartmentComponent implements OnInit {
     this.router.navigate(['add'],{relativeTo: this.route})
   }
 
-  onDeleteDepartment() {
-    this.adminService.deleteDepartment(this.id);
+  onDeleteDepartment(i) {
+    this.adminService.deleteDepartment(i);
+    console.log(i);
   }
 
 }

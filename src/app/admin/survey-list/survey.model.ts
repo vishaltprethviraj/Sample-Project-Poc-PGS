@@ -1,7 +1,6 @@
 import { Question } from '../question/question.model';
 
-export class Survey {
-    public id: number;
+export class Survey {    
     public name: string;
     public description: string;
     public thankYouMessage: string;
@@ -9,10 +8,9 @@ export class Survey {
     public endDate: string;   
     public question: Question[];
     
-    constructor(id:number,name:string,description:string,
+    constructor(name:string,description:string,
                 thankYouMessage:string,startDate:string,endDate:string,question:Question[]
-            ) {
-                this.id = id;
+            ) {                
                 this.name = name;
                 this.description = description;
                 this.thankYouMessage = thankYouMessage;

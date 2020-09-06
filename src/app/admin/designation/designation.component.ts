@@ -27,14 +27,7 @@ export class DesignationComponent implements OnInit {
         (designation: Designation[]) => {
           this.designations = designation;
         }
-      );
-
-      this.route.params
-      .subscribe(
-        (params: Params) => {
-          this.id = +params['id'];          
-        }
-      );    
+      );       
 
     this.designations = this.adminService.getDesignation();
   }
@@ -45,8 +38,8 @@ export class DesignationComponent implements OnInit {
     scrollingElement.scrollTop = scrollingElement.scrollHeight;
   }
 
-  onDeleteDesignation() {
-    this.adminService.deleteDesignation(this.id);  
+  onDeleteDesignation(i) {
+    this.adminService.deleteDesignation(i);  
   }
 
   scrollDown(){

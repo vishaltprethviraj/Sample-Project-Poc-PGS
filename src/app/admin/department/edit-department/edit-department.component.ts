@@ -24,14 +24,14 @@ export class EditDepartmentComponent implements OnInit {
         (params: Params) => {
           this.id = +params['id'];
           this.editMode = params['id'] != null;
-          this.initForm();          
+          this.initForm();               
         }
       );    
         
   } 
 
   onSubmit() {
-    const newDepartment = new Department(this.editDepartmentForm.value['departmentName']) ;
+    const newDepartment = new Department(5,this.editDepartmentForm.value['departmentName']) ;
     if(this.editMode) {
       this.adminService.updateDepartment(this.id,newDepartment);      
     }            

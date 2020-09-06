@@ -22,7 +22,7 @@ export class AddDepartmentComponent implements OnInit {
   }
 
   onSubmit() {
-    const newDepartment = new Department(this.addDepartmentForm.value['departmentName']) ;
+    const newDepartment = new Department(5,this.addDepartmentForm.value['departmentName']) ;
     this.adminService.addDepartment(newDepartment);  
     this.onCancel();
   }

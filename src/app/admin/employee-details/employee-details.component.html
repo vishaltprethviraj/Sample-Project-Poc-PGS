@@ -31,12 +31,12 @@
                         <td>{{ employee.department[0].departmentName }}</td>
                         <td>{{ employee.designation[0].designationName }}</td>
                         <td>
-                            <a href="edit-employee.html">
+                            <a style="cursor: pointer;" (click)="onEditEmployee(i)">
                                 <fa-icon [icon]="faPencilAlt" style="color:#486dda;"></fa-icon>
                             </a>
                         </td>
                         <td>
-                            <a href="#">
+                            <a style="cursor: pointer;" (click)="onDeleteEmployee(i)">
                                 <fa-icon [icon]="faTrash" style="color:#486dda;"></fa-icon>
                             </a>
                         </td>

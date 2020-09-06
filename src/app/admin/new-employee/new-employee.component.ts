@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+
 import { Department } from '../department/department.model';
 import { AdminService } from '../admin.service';
 import { Designation } from '../designation/designation.model';
-import { NgForm } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+
 import { Employee } from '../employee-details/employee.model';
 
 @Component({
@@ -17,8 +19,10 @@ export class NewEmployeeComponent implements OnInit {
   
   departments : Department[];
   designations : Designation[]; 
+  
   departmentId: number;
   designationId: number;
+
   @ViewChild('f',{static:false}) newEmployeeForm: NgForm;
    
   defaultDepartment = '0' 
@@ -37,10 +41,10 @@ export class NewEmployeeComponent implements OnInit {
                                     this.newEmployeeForm.value['email'],
                                     this.newEmployeeForm.value['phoneNumber'],                                                                      
                                     [this.adminService.getDepartments(this.departmentId)],
-                                    [this.adminService.getDesignations(this.designationId)])
+                                    [this.adminService.getDesignations(this.designationId)]);
     this.adminService.addEmployee(newEmployee);
-    console.log(this.newEmployeeForm);
-    console.log(newEmployee);
+    // console.log(this.newEmployeeForm);
+    // console.log(newEmployee);
     this.onCancel();
   }
 

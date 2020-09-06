@@ -44,8 +44,8 @@ export class QuestionComponent implements OnInit {
     this.router.navigate(['add'],{ relativeTo: this.route });    
   }
 
-  onDeleteQuestion() {
-    this.adminService.deleteQuestion(this.id);    
+  onDeleteQuestion(i) {
+    this.adminService.deleteQuestion(i);    
   }
 
 }

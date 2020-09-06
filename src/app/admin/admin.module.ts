@@ -23,6 +23,8 @@ import { AddDesignationComponent } from './designation/add-designation/add-desig
 import { EditDesignationComponent } from './designation/edit-designation/edit-designation.component';
 import { AddQuestionComponent } from './question/add-question/add-question.component';
 import { EditQuestionComponent } from './question/edit-question/edit-question.component';
+import { EditEmployeeComponent } from './employee-details/edit-employee/edit-employee.component';
+import { SurveyDetailComponent } from './survey-list/survey-detail/survey-detail.component';
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import { EditQuestionComponent } from './question/edit-question/edit-question.co
     AddDesignationComponent,
     EditDesignationComponent,
     AddQuestionComponent,
-    EditQuestionComponent    
+    EditQuestionComponent,
+    EditEmployeeComponent,
+    SurveyDetailComponent    
   ],
   imports: [
     RouterModule,    
@@ -69,7 +73,9 @@ import { EditQuestionComponent } from './question/edit-question/edit-question.co
     SidebarComponent,
     TopbarComponent,
     AddDepartmentComponent,
-    EditDepartmentComponent   
+    EditDepartmentComponent,
+    EditEmployeeComponent,
+    SurveyDetailComponent   
   ]
 })
 export class AdminModule {

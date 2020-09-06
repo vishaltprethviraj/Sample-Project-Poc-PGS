@@ -13,10 +13,10 @@ export class AdminService {
     departmentChanged = new Subject<Department[]>();
 
     departments: Department[] = [
-        new Department('Web Development'),
-        new Department('Analytics'),
-        new Department('Business'),
-        new Department('Accountancy')
+        new Department(1,'Web Development'),
+        new Department(2,'Analytics'),
+        new Department(3,'Business'),
+        new Department(4,'Accountancy')
       ];
 
     getDepartment(){
@@ -80,7 +80,8 @@ export class AdminService {
     //employee section
 
     employeeChanged = new Subject<Employee[]>();
-
+    startEditing = new Subject<number>();
+    
     employees: Employee[] =[
         new Employee('raju@1234','raju@gmail.com','Rajesh','9895476309',[this.departments[0]],[this.designations[2]]),
         new Employee('sanju_2310','sanju@gmail.com','Sanjay','8089367521',[this.departments[2]],[this.designations[6]])
@@ -96,6 +97,16 @@ export class AdminService {
 
     addEmployee(employee:Employee) {
       this.employees.push(employee);      
+      this.employeeChanged.next(this.employees.slice());
+    }
+
+    updateEmployee(index:number,newEmployee:Employee) {
+      this.employees[index] = newEmployee;
+      this.employeeChanged.next(this.employees.slice());
+    }
+
+    deleteEmployee(index:number) {
+      this.employees.splice(index,1);
       this.employeeChanged.next(this.employees.slice());
     }
 
@@ -165,7 +176,7 @@ export class AdminService {
     //survey section
     
     surveys: Survey[] = [
-      new Survey(1,'Product Survey','This survey is for knowing the user\'s take on various aspects of our product',
+      new Survey('Product Survey','This survey is for knowing the user\'s take on various aspects of our product',
                  'Thank you for your valuable suggestion','25-08-2020','27-08-2020',[
                    this.questions[0],
                    this.questions[1],
@@ -175,6 +186,10 @@ export class AdminService {
 
     getSurvey() {
       return this.surveys.slice();
+    }
+
+    getSurveys(index:number) {
+      return this.surveys[index];
     }
 
 }

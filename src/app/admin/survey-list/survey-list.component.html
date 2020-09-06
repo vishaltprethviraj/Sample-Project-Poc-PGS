@@ -21,7 +21,9 @@
                 <tbody>
                     <tr *ngFor="let survey of surveys; let i = index">
                         <td>{{ i+ 1}}</td>
-                        <td><a href="survey-questions.html" style="color: rgb(94, 41, 238);margin-left: 0rem;">{{survey.name}}</a></td>
+                        <td>
+                            <a style="color: rgb(94, 41, 238);margin-left: 0rem;cursor: pointer;" [routerLink]="[i,'detail']">{{survey.name}}</a>
+                        </td>
                         <td>{{ survey.description }} </td>
                         <td>{{ survey.startDate }}</td>
                         <td>{{ survey.endDate }}</td>
