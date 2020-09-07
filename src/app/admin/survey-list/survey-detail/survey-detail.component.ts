@@ -28,8 +28,7 @@ export class SurveyDetailComponent implements OnInit {
   private initForm() {    
     let question = [];
     const survey = this.adminService.getSurveys(this.id);
-    this.name = survey.name;  
-    this.questions = survey.question;          
+    this.name = survey.name;             
   }
 
 }

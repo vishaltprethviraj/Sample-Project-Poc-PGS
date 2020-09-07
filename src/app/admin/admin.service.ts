@@ -179,12 +179,7 @@ export class AdminService {
 
     surveys: Survey[] = [
       new Survey('Product Survey','This survey is for knowing the user\'s take on various aspects of our product',
-                 'Thank you for your valuable suggestion','25-08-2020','27-08-2020',[
-                   this.questions[0],
-                   this.questions[1],
-                   this.questions[2]
-                 ])
-    ];
+                 'Thank you for your valuable suggestion','25-08-2020','27-08-2020')];
 
     getSurvey() {
       return this.surveys.slice();

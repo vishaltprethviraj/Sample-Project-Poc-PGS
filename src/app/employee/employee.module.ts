@@ -7,8 +7,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { EmployeeRoutingModule } from './employee-routing.module';
 import { SharedModule } from '../shared/shared.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ListSurveyComponent } from './list-survey/list-survey.component';
+import { SurveyQuestionComponent } from './list-survey/survey-question/survey-question.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +17,15 @@ import { ListSurveyComponent } from './list-survey/list-survey.component';
     HomeComponent,
     SidebarComponent,
     TopbarComponent,
-    ListSurveyComponent    
+    ListSurveyComponent,
+    SurveyQuestionComponent    
   ],
   imports: [
     RouterModule,    
     EmployeeRoutingModule,
     ReactiveFormsModule,    
-    SharedModule,    
+    SharedModule,   
+    FormsModule 
   ],
   exports: [
     EmployeeComponent,

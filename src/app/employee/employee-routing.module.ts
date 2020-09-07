@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { EmployeeComponent } from './employee.component';
 import { HomeComponent } from './home/home.component';
 import { ListSurveyComponent } from './list-survey/list-survey.component';
+import { SurveyQuestionComponent } from './list-survey/survey-question/survey-question.component';
 
 const routes: Routes = [
     { path: 'employee' , component : EmployeeComponent, 
@@ -11,7 +12,11 @@ const routes: Routes = [
     children: [        
          { path: '', component: HomeComponent },
          { path: 'home', component: HomeComponent},
-         { path: 'list-survey', component:ListSurveyComponent}
+         { path: 'list-survey', children:[
+            { path: '' , component:ListSurveyComponent},
+            { path: ':id/survey-question', component:SurveyQuestionComponent}
+         ]
+            },
         //  { path: 'audit-log', component: AuditLogComponent },
         //  { path: 'employee-details', children: [
         //      { path: '', component: EmployeeDetailsComponent , pathMatch:'full'},
