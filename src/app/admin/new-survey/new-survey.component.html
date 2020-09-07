@@ -3,7 +3,7 @@
     <!-- Page Heading -->
     <h1 style="color:gray;">Create Survey - Step 1</h1>
     <br>
-    <form [formGroup]='newSurveyForm'>
+    <form [formGroup]="newSurveyForm" (ngSubmit)="onSubmit()">
         <div class="row">
             <div class="col-xl-6">
                 <label for="surveyName">Name</label>
@@ -11,7 +11,7 @@
             </div>
             <div class="col-xl-6">
                 <label for="startDate">Start Date</label>
-                <input type="datetime-local" class="form-control" id="startDate" formControlName="startDate">
+                <input type="date" class="form-control" id="startDate" formControlName="startDate">
             </div>
         </div>
         <br>
@@ -22,7 +22,7 @@
             </div>
             <div class="col-xl-6">
                 <label for="endDate">End Date</label>
-                <input type="datetime-local" class="form-control" id="endDate" formControlName="startDate">
+                <input type="date" class="form-control" id="endDate" formControlName="endDate">
             </div>
         </div>
         <br>
@@ -40,7 +40,7 @@
         <br>
         <div class="row">
             &nbsp;&nbsp;
-            <button type="button" class="btn btn-primary" onclick="window.location.href='survey-step2.html'">Next</button> &nbsp;&nbsp;
+            <button type="submit" class="btn btn-primary" [disabled]="!newSurveyForm.valid">Next</button> &nbsp;&nbsp;
         </div>
     </form>
     <!-- Content Row -->

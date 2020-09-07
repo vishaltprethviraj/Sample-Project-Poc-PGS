@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AdminModule } from './admin/admin.module';
 import { LoginModule } from './login/login.module';
 import { EmployeeModule } from './employee/employee.module';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EmployeeModule } from './employee/employee.module';
     AppRoutingModule,
     AdminModule,
     LoginModule,
-    EmployeeModule
+    EmployeeModule,
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

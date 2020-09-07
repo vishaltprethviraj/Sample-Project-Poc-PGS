@@ -157,6 +157,7 @@ export class AdminService {
     getQuestions(index:number) {
       return this.questions[index];
     }
+    
 
     addQuestion(question:Question) {
       this.questions.push(question);
@@ -174,7 +175,8 @@ export class AdminService {
     }
 
     //survey section
-    
+    surveyChanged = new Subject<Survey[]>();
+
     surveys: Survey[] = [
       new Survey('Product Survey','This survey is for knowing the user\'s take on various aspects of our product',
                  'Thank you for your valuable suggestion','25-08-2020','27-08-2020',[
@@ -190,6 +192,11 @@ export class AdminService {
 
     getSurveys(index:number) {
       return this.surveys[index];
+    }
+
+    addSurvey(survey:Survey) {
+      this.surveys.push(survey);
+      this.surveyChanged.next(this.surveys.slice());
     }
 
 }

@@ -25,6 +25,8 @@ import { AddQuestionComponent } from './question/add-question/add-question.compo
 import { EditQuestionComponent } from './question/edit-question/edit-question.component';
 import { EditEmployeeComponent } from './employee-details/edit-employee/edit-employee.component';
 import { SurveyDetailComponent } from './survey-list/survey-detail/survey-detail.component';
+import { AddSurveyQuestionComponent } from './new-survey/add-survey-question/add-survey-question.component';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -49,7 +51,8 @@ import { SurveyDetailComponent } from './survey-list/survey-detail/survey-detail
     AddQuestionComponent,
     EditQuestionComponent,
     EditEmployeeComponent,
-    SurveyDetailComponent    
+    SurveyDetailComponent,
+    AddSurveyQuestionComponent    
   ],
   imports: [
     RouterModule,    
@@ -76,7 +79,8 @@ import { SurveyDetailComponent } from './survey-list/survey-detail/survey-detail
     EditDepartmentComponent,
     EditEmployeeComponent,
     SurveyDetailComponent   
-  ]
+  ],
+  providers:[DatePipe]
 })
 export class AdminModule {
 

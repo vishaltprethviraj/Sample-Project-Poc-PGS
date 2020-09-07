@@ -20,6 +20,7 @@ import { AddQuestionComponent } from './question/add-question/add-question.compo
 import { EditQuestionComponent } from './question/edit-question/edit-question.component';
 import { EditEmployeeComponent } from './employee-details/edit-employee/edit-employee.component';
 import { SurveyDetailComponent } from './survey-list/survey-detail/survey-detail.component';
+import { AddSurveyQuestionComponent } from './new-survey/add-survey-question/add-survey-question.component';
 
 const routes: Routes = [
     { path: 'admin' , component : AdminComponent, 
@@ -52,7 +53,10 @@ const routes: Routes = [
             { path:':id/detail',component:SurveyDetailComponent}
          ] 
           },
-         { path: 'new-survey', component: NewSurveyComponent },
+         { path: 'new-survey', children:[
+            { path:'' ,component: NewSurveyComponent },
+            { path:'add-survey-question',component:AddSurveyQuestionComponent}
+         ] },
          { path: 'new-employee', component: NewEmployeeComponent},
          { path: 'report', component: ReportComponent }
     ]

@@ -22,11 +22,22 @@ export class AddQuestionComponent implements OnInit {
   private onInit() {
     let question = '';
     let questionOptions = new FormArray([],Validators.required);
-
+        
     this.addQuestionForm = new FormGroup({
       'question': new FormControl(question,Validators.required),      
       'options': questionOptions           
     });
+    
+    (<FormArray>this.addQuestionForm.get('options')).push(
+      new FormGroup({
+        'options': new FormControl(null,Validators.required)
+      })
+    );
+    (<FormArray>this.addQuestionForm.get('options')).push(
+      new FormGroup({
+        'options': new FormControl(null,Validators.required)
+      })
+    );
   }  
   
   onSubmit() {    

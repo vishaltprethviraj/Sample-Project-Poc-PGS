@@ -15,6 +15,12 @@ export class SurveyListComponent implements OnInit {
   
 
   ngOnInit(): void {
+    this.adminService.surveyChanged
+      .subscribe(
+        (surveys: Survey[]) => {
+          this.surveys = surveys;
+        }
+      );
     this.surveys = this.adminService.getSurvey();    
     // console.log(this.surveys);
   }

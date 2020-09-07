@@ -5,17 +5,15 @@ export class Survey {
     public description: string;
     public thankYouMessage: string;
     public startDate: string;
-    public endDate: string;   
-    public question: Question[];
+    public endDate: string;      
     
     constructor(name:string,description:string,
-                thankYouMessage:string,startDate:string,endDate:string,question:Question[]
+                thankYouMessage:string,startDate:string,endDate:string
             ) {                
                 this.name = name;
                 this.description = description;
                 this.thankYouMessage = thankYouMessage;
                 this.startDate = startDate;
-                this.endDate = endDate;
-                this.question = question;
+                this.endDate = endDate;                
              }
 }

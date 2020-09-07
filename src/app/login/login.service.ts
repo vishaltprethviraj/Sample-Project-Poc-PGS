@@ -30,7 +30,7 @@ export class LoginService {
             email: username,
             password: password,
             returnSecureToken: true
-        }).pipe(catchError(this.handleError), tap(resData => {
+        }).pipe(catchError(this.handleError), tap(resData => {            
             this.handleAuthentication(resData.email,resData.localId,resData.idToken,+resData.expiresIn);
         }));
         
@@ -41,8 +41,12 @@ export class LoginService {
             new Date().getTime() + expiresIn * 1000
         );
            
-        const user = new User(email,userId,token,expirationDate);
-        this.user.next(user);
+        const user = new User(email,userId,token,expirationDate);        
+        // this.user.next(user);        
+        //storing in local storage and retreiving it 
+        localStorage.setItem('user',JSON.stringify(user));
+        var retrievedItem = localStorage.getItem('user');
+        console.log('Retrieved Item: ',JSON.parse(retrievedItem));
     }
 
     private handleError(errorRes: HttpErrorResponse) {
