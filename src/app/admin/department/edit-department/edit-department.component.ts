@@ -31,7 +31,7 @@ export class EditDepartmentComponent implements OnInit {
   } 
 
   onSubmit() {
-    const newDepartment = new Department(5,this.editDepartmentForm.value['departmentName']) ;
+    const newDepartment = new Department(this.id,this.editDepartmentForm.value['departmentName']) ;
     if(this.editMode) {
       this.adminService.updateDepartment(this.id,newDepartment);      
     }            

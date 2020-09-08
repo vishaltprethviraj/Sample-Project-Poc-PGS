@@ -10,6 +10,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ListSurveyComponent } from './list-survey/list-survey.component';
 import { SurveyQuestionComponent } from './list-survey/survey-question/survey-question.component';
+import { QuestionOptionComponent } from './list-survey/survey-question/question-option/question-option.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SurveyQuestionComponent } from './list-survey/survey-question/survey-qu
     SidebarComponent,
     TopbarComponent,
     ListSurveyComponent,
-    SurveyQuestionComponent    
+    SurveyQuestionComponent,
+    QuestionOptionComponent    
   ],
   imports: [
     RouterModule,    
@@ -31,7 +33,8 @@ import { SurveyQuestionComponent } from './list-survey/survey-question/survey-qu
     EmployeeComponent,
     HomeComponent,    
     SidebarComponent,
-    TopbarComponent,     
+    TopbarComponent, 
+    QuestionOptionComponent    
   ]
 })
 export class EmployeeModule {

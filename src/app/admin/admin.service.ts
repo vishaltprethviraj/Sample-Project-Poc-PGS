@@ -6,6 +6,9 @@ import { Option } from './question/option.model';
 import { Survey } from './survey-list/survey.model';
 import { AuditLog } from './audit-log/audit-log.model';
 import { Subject } from 'rxjs';
+import { Injectable } from '@angular/core';
+
+@Injectable( { providedIn:'root' }) 
 
 export class AdminService {
     

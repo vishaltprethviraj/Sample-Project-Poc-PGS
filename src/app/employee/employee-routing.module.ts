@@ -5,6 +5,7 @@ import { EmployeeComponent } from './employee.component';
 import { HomeComponent } from './home/home.component';
 import { ListSurveyComponent } from './list-survey/list-survey.component';
 import { SurveyQuestionComponent } from './list-survey/survey-question/survey-question.component';
+import { QuestionOptionComponent } from './list-survey/survey-question/question-option/question-option.component';
 
 const routes: Routes = [
     { path: 'employee' , component : EmployeeComponent, 
@@ -14,7 +15,10 @@ const routes: Routes = [
          { path: 'home', component: HomeComponent},
          { path: 'list-survey', children:[
             { path: '' , component:ListSurveyComponent},
-            { path: ':id/survey-question', component:SurveyQuestionComponent}
+            { path: ':surveyId/survey-question',  children:[
+                { path: '', component:SurveyQuestionComponent},
+                { path: ':id' , component: QuestionOptionComponent }
+            ]}
          ]
             },
         //  { path: 'audit-log', component: AuditLogComponent },

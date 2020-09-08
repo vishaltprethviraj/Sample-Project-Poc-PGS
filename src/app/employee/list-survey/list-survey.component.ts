@@ -14,7 +14,7 @@ export class ListSurveyComponent implements OnInit {
   }
 
   onAttend() {
-    this.router.navigate(['1','survey-question'],{ relativeTo: this.route })
+    this.router.navigate(['1','survey-question','0'],{ relativeTo: this.route })
   }
 
 }

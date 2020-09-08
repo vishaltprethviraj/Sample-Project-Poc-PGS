@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { faPencilAlt,faTrash} from '@fortawesome/free-solid-svg-icons';
 
 import { Department } from './department.model';
@@ -20,8 +20,6 @@ export class DepartmentComponent implements OnInit {
   
   constructor(private adminService:AdminService,private router:Router,private route:ActivatedRoute) { }
 
-  id:number;
-
   ngOnInit(): void {
     this.adminService.departmentChanged
       .subscribe(
@@ -33,11 +31,11 @@ export class DepartmentComponent implements OnInit {
   }
 
   onAddDepartment() {
-    this.router.navigate(['add'],{relativeTo: this.route})
+    this.router.navigate(['add'],{relativeTo: this.route})  
   }
 
   onDeleteDepartment(i) {   
-    this.adminService.deleteDepartment(i);
+    this.adminService.deleteDepartment(i);    
     console.log(i);
   }
 
