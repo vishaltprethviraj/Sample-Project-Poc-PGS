@@ -1,18 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './navigation/navigation.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AdminModule } from './admin/admin.module';
+import { LoginModule } from './login/login.module';
+import { EmployeeModule } from './employee/employee.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavigationComponent
+    AppComponent                  
   ],
   imports: [
-    BrowserModule,
-    FontAwesomeModule,
+    BrowserModule,     
+    AppRoutingModule,
+    AdminModule,
+    LoginModule,
+    EmployeeModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
